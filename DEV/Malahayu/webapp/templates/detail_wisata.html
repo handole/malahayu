@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<!--=== Blog Posts ===-->
+<div class="bg-color-light">
+	<div class="container content-sm">
+		<!-- News v3 -->
+		<div class="news-v3 bg-color-white margin-bottom-30">
+			<img class="img-responsive full-width" src="{% if instance.image %}{{ instance.image.url }}{% else %}{% static 'img/img1.jpg' %}{% endif %}" alt="">
+			<div class="news-v3-in">
+				<ul class="list-inline posted-info">
+					<li>By Admin</li>
+					<li>Posted {{ instance.created }}</li>
+				</ul>
+				<h2>{{ instance.name }}</h2>
+				<br>
+				<p>{{ instance.content|safe }}</p>
+				<ul class="post-shares post-shares-lg">
+					<li>
+						<a href="#">
+							<i class="rounded-x icon-speech"></i>
+							<span>28</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="rounded-x icon-share"></i>
+							<span>355</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<i class="rounded-x icon-heart"></i>
+							<span>107</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- End Posts -->
+
+		<h2 class="margin-bottom-20">Comments</h2>
+				<!-- Blog Comments 
+				<div class="row blog-comments margin-bottom-30">
+					<div class="col-sm-2 sm-margin-bottom-40">
+						<img src="assets/img/team/img1-sm.jpg" alt="">
+					</div>
+					<div class="col-sm-10">
+						<div class="comments-itself">
+							<h4>
+								Jalen Davenport
+								<span>5 hours ago / <a href="#">Reply</a></span>
+							</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae, gravida pellentesque urna varius vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod..</p>
+						</div>
+					</div>
+				</div>
+				<!-- End Blog Comments -->
+
+				
+
+				<hr>
+
+				<h2 class="margin-bottom-20">Post a Comment</h2>
+				<!-- Form -->
+				<form action="assets/php/sky-forms-pro/demo-comment-process.php" method="post" id="sky-form3" class="sky-form comment-style">
+					<fieldset>
+						<div class="row sky-space-30">
+							<div class="col-md-6">
+								<div>
+									<input type="text" name="name" id="name" placeholder="Name" class="form-control">
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div>
+									<input type="text" name="email" id="email" placeholder="Email" class="form-control">
+								</div>
+							</div>
+						</div>
+
+						<div class="sky-space-30">
+							<div>
+								<textarea rows="8" name="message" id="message" placeholder="Write comment here ..." class="form-control"></textarea>
+							</div>
+						</div>
+
+						<p><button type="submit" class="btn-u">Submit</button></p>
+					</fieldset>
+
+					<div class="message">
+						<i class="rounded-x fa fa-check"></i>
+						<p>Your comment was successfully posted!</p>
+					</div>
+				</form>
+				<!-- End Form -->
+
+	</div>
+</div>
+
+{% include 'snippet/footer.html' %}
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load staticfiles %}
+{% load embed_video_tags %}
+<!--=== Slider ===-->
+<div class="slider-inner">
+	<div id="da-slider" class="da-slider">
+		<div class="da-slide">
+			<h2><i>PESONA WISATA</i> <br /> <i>WADUK MALAHAYU</i></h2>
+			<p><i>Kelompok Sadar Wisata</i> <br /> <i>GEGER HALANG</i> <br /> <i>Desa Malahayu </i></p>
+			<div class="da-slide da-img">
+			  <img class="img-fluid d-block mx-auto mb-5" src="{% static 'img/logo-malahayu.png' %}" alt="">
+		    </div>
+		</div>
+		<div class="da-slide">
+			{% for list in video %}
+			<h2><i>{{ list.name }}</i></h2>
+			
+			<div class="da-img">
+				<iframe src="{% video list.link as my_video %}
+				        URL: {{ my_video.url }}
+						Thumbnail: {{ my_video.thumbnail }}
+						Backend: {{ my_video.backend }}
+					    {% video my_video 'small' %}
+					    {% endvideo %}" width="530" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="da-slide">
+			<h2><i>USING BEST WEB</i> <br /> <i>SOLUTIONS WITH</i> <br /> <i>HTML5/CSS3</i></h2>
+			<p><i>Lorem ipsum dolor amet</i> <br /> <i>tempor incididunt ut</i> <br /> <i>veniam omnis </i></p>
+			<div class="da-img"><img src="assets/plugins/parallax-slider/img/html5andcss3.png" alt="image01" /></div>
+		</div>
+		<div class="da-arrows">
+			<span class="da-arrows-prev"></span>
+			<span class="da-arrows-next"></span>
+		</div>
+	</div>
+</div><!--/slider-->
+	<!--=== End Slider ===-->

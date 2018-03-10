@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+{% include 'snippet/slider.html' %}
+
+<!--=== List Wisata Posts ===-->
+<div class="container content-md">
+	<!-- News v3 -->
+
+	<div class="row">
+		<div class="col-md-9">
+			<!-- news -->
+			<div class="col-md-12">
+			  
+			  <h2>News Update</h2>
+			  {% for new in news %}			  
+			  <div class="col-md-6">
+				<img class="img-responsive" src="{% if new.image %}{{ new.image.url }}{% else %}{% static 'img/img1.jpg' %}{% endif %}" alt="">
+				<ul class="list-inline posted-info">
+					<li>By Admin</li>
+					<li>Posted {{ new.created }}</li>
+				</ul>
+				<h2><a href="{% url 'wisata:wisata-detail' new.slug %}">{{ new.title }}</a></h2>									
+			  </div>				
+			  {% endfor %}
+			</div><hr class="margin-bottom-40">
+
+			<div class="col-md-12">
+				<!-- Wisata  -->
+				<h2>Object Wisata</h2>
+				{% for wis in wisata %}
+				<div class="col-md-6">
+					<img class="img-responsive" src="{% if wis.image %}{{ wis.image.url }}{% else %}{% static 'img/img1.jpg' %}{% endif %}" alt="">
+					<ul class="list-inline posted-info">
+						<li>By Admin</li>
+						<li>Posted {{ wis.created }}</li>
+					</ul>
+					<h2><a href="{% url 'wisata:wisata-detail' wis.slug %}">{{ wis.name }}</a></h2>				
+				</div>				
+				{% endfor %}
+			</div><hr class="margin-bottom-40">
+
+			<div class="col-md-12" style="border: solid 1px #eee; padding: 20px; background: #eee; margin-bottom: 30px;">
+				<!-- Agenda Kegiatan perbulan -->
+				<h2>Agenda kegiatan</h2>
+				{% for keg in agenda %}
+				<h3>{{ keg.name }}</h3>
+				<p>{{ keg.content|safe }}</p>
+				{% endfor %}
+			</div>						
+		</div>
+
+		<div class="col-md-3">
+			<!-- Recent Posts -->
+			<div class="posts margin-bottom-40">
+				<div class="headline headline-md"><h2>Recent Posts</h2></div>
+				<dl class="dl-horizontal">
+					<dt><a href="#"><img src="{% static 'img/img1.jpg' %}" alt="" /></a></dt>
+					<dd>
+						<p><a href="#">Responsive Bootstrap 3 Template placerat idelo alac eratamet.</a></p>
+					</dd>
+				</dl>
+				<dl class="dl-horizontal">
+					<dt><a href="#"><img src="{% static 'img/img1.jpg' %}" alt="" /></a></dt>
+					<dd>
+						<p><a href="#">100+ Amazing Features Layer Slider, Layer Slider, Icons, 60+ Pages etc.</a></p>
+					</dd>
+				</dl>
+				<dl class="dl-horizontal">
+					<dt><a href="#"><img src="{% static 'img/img1.jpg' %}" alt="" /></a></dt>
+					<dd>
+						<p><a href="#">Developer Friendly Code imperdiet condime ntumi mperdiet condim.</a></p>
+					</dd>
+				</dl>
+			</div><!--/posts-->
+			<!-- End recent Posts -->
+		</div>
+		
+	</div>
+</div>
+
+
+
+{% include 'snippet/footer.html' %}
+{% endblock %}
+

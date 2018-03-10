@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<!--=== List Paket Wisata Posts ===-->
+<!--=== Breadcrumbs ===-->
+		<div class="breadcrumbs">
+			<div class="container">
+				<h1 class="pull-left">PAKET PESONA MALAHAYU</h1>
+				
+			</div>
+		</div><!--/breadcrumbs-->
+		<!--=== End Breadcrumbs ===-->
+
+		<!--=== Content Part ===-->
+		<div class="container content">
+			<!-- Pricing Light -->
+			
+			<div class="row margin-bottom-40 pricing-light">
+			{% for list in object_list %}
+				<div class="col-md-6 col-sm-6">
+					<div class="pricing hover-effect">
+						
+						<div class="pricing-head">
+							<h3>{{ list.name }}</h3>
+						</div>
+						<ul class="pricing-content list-unstyled">
+							{{ list.content|safe }}
+						</ul><hr>
+						<div class="pricing-footer">
+							<!-- <h4><i>$</i>5<i>.49</i> <span>Per Month</span></h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cloud Storage magna psum condimentum...</p> -->
+							<a href="{% url 'contact' %}" class="btn-u btn-brd btn-brd-hover btn-u-default btn-u-xs"><i class="fa fa-shopping-cart"></i> Purchase Now</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+			
+
+{% include 'snippet/footer.html' %}
+
+{% endblock %}

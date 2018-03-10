@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container content">
+	<!-- Agenda Kegiatan perbulan -->
+	<div class="row blog-page">
+		<h2>Agenda kegiatan</h2>
+		{% for list in object_list %}
+		<div style="border: solid 1px #eee; padding: 20px; background: #eee; margin-bottom: 30px;">
+			<h3>{{ list.name }}</h3>
+			<p>{{ list.content|safe }}</p>
+		</div>			
+		{% endfor %}
+	</div>
+
+</div>
+{% include 'snippet/footer.html' %}
+{% endblock %}

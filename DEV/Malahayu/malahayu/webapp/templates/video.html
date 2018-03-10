@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+
+{% block content %}
+
+
+<!--Blog Post-->
+<div class="container content">
+	<div class="row blog-page">
+		{% for list in object_list %}
+		<div class="blog margin-bottom-40">
+			<h2>{{ list.name }}</h2>
+			<div class="blog-post-tags">
+				<ul class="list-unstyled list-inline blog-info">
+					<li><i class="fa fa-calendar"></i> {{ list.created }}</li>
+					<li><i class="fa fa-pencil"></i> Admin</li>
+					
+				</ul>
+				
+			</div>
+			<div class="blog-img">
+				<div class="responsive-video">
+					{% video list.link as my_video %}
+						URL: {{ my_video.url }}
+						Thumbnail: {{ my_video.thumbnail }}
+						Backend: {{ my_video.backend }}
+					  {% video my_video 'small' %}
+					{% endvideo %}
+				</div>
+			</div>
+		</div><hr>
+		{% endfor %}
+		<!--End Blog Post-->
+	</div>
+</div>
+<!-- End Two Columns -->
+
+{% include 'snippet/footer.html' %}
+{% endblock %}

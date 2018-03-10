@@ -1,0 +1,170 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<title>Pesona Wisata Malahayu</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Web Fonts -->
+	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+	<!-- CSS Global Compulsory -->
+	<link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<!-- CSS Header and Footer -->
+	<link rel="stylesheet" href="{% static 'css/headers/header-default.css' %}">
+	<link rel="stylesheet" href="{% static 'css/footers/footer-v1.css' %}">
+
+	<!-- CSS Implementing Plugins -->
+	<link rel="stylesheet" href="{% static 'plugins/animate.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/line-icons/line-icons.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/font-awesome/css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/parallax-slider/css/parallax-slider.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'plugins/fancybox/source/jquery.fancybox.css' %}">
+	<link rel="stylesheet" href="{% static 'css/pages/page_pricing.css' %}">
+	<link rel="stylesheet" href="{% static 'css/pages/blog.css' %}">
+	<link rel="stylesheet" href="{% static 'css/pages/blog_magazine.css' %}">
+	<link rel="stylesheet" href="{% static 'css/pages/blog_masonry_3col.css' %}">
+
+	<!-- CSS Theme -->
+	<link rel="stylesheet" href="{% static 'css/theme-colors/default.css' %}" id="style_color">
+	<link rel="stylesheet" href="{% static 'css/theme-skins/dark.css' %}">
+
+	<!-- CSS Customization -->
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+
+<body>
+	<div class="wrapper">
+		<!--=== Header ===-->
+		<div class="header">
+			<div class="container">
+				<!-- Logo -->
+				<a class="logo" href="/">					
+					<!-- <h2 style="height: 60px;">Pesona Malahayu</h2> -->
+					<img img-circle src="{% static 'img/logo-header-3.jpg' %}" alt="Logo" height="auto">
+				</a>
+				<!-- End Logo -->
+
+				<!-- Topbar Pilih bahasa -->
+				<div class="topbar">
+					<ul class="loginbar pull-right">
+						<li class="hoverSelector">
+							<i class="fa fa-globe"></i>
+							<a>Languages</a>
+							<ul class="languages hoverSelectorBlock">
+								<li class="active">
+									<a href="#">English <i class="fa fa-check"></i></a>
+								</li>
+								<li><a href="#">Bahasa</a></li>
+								<li><a href="#">Russian</a></li>
+								<li><a href="#">German</a></li>
+							</ul>
+						</li>
+						<li class="topbar-devider"></li>
+						<li><a href="/faqs">Help</a></li>
+						<li class="topbar-devider"></li>
+						<li><a href="">Login</a></li>
+					</ul>
+				</div>
+				<!-- End Topbar -->
+
+				<!-- Toggle get grouped for better mobile display -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="fa fa-bars"></span>
+				</button>
+				<!-- End Toggle -->
+			</div><!--/end container-->
+
+			<div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
+				<div class="container">
+					<ul class="nav navbar-nav">
+						<!-- Home -->				
+						<li><a href="/">Home </a></li>
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+								About
+							</a>
+							<ul class="dropdown-menu">
+								<!-- About Pages -->
+								<li><a href="/profil">Profil </a></li>
+								<li><a href="/visimisi">Visi dan Misi </a></li>
+								<li><a href="/agenda">Agenda Kegiatan</a></li>
+								<li><a href="/faqs">FAQs</a></li>
+							</ul>
+						</li>					    
+						<li><a href="/wisata">Wisata </a></li>	
+						<li><a href="/paket-wisata">Paket Wisata </a></li>	
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+								Gallery
+							</a>
+							<ul class="dropdown-menu">
+								<!-- About Pages -->
+								<li><a href="/gallery/foto">Foto </a></li>
+								<li><a href="/gallery/video">Video </a></li>
+							</ul>
+						</li>						
+						<li><a href="/news">News </a></li>
+						<li><a href="/contact">Contact </a></li>
+
+				</div>
+			</div>	
+		</div>
+
+		{% block content %}
+		{% endblock %}
+
+<!-- JS Global Compulsory -->
+	<script type="text/javascript" src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/jquery/jquery-migrate.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- JS Implementing Plugins -->
+	<script type="text/javascript" src="{% static 'plugins/back-to-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/smoothScroll.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'plugins/masonry/jquery.masonry.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/parallax-slider/js/modernizr.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/parallax-slider/js/jquery.cslider.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/owl-carousel/owl-carousel/owl.carousel.js' %}"></script>
+	<script type="text/javascript" src="{% static 'plugins/fancybox/source/jquery.fancybox.pack.js' %}"></script>
+	<!-- JS Customization -->
+	<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+	<!-- JS Page Level -->
+	<script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/owl-carousel.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/fancy-box.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/pages/blog-masonry.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/style-switcher.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/parallax-slider.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/plugins/video/video.js' %}"></script>
+	
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+			App.init();
+			OwlCarousel.initOwlCarousel();
+			StyleSwitcher.initStyleSwitcher();
+			ParallaxSlider.initParallaxSlider();
+			FancyBox.initFancybox();
+			StyleSwitcher.initStyleSwitcher();
+		});
+		$R('#content', {
+			plugins: ['video']
+		});
+	</script>
+
+</body>
+</html>

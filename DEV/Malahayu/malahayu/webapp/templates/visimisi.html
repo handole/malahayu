@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<!--=== Our Skills ===-->
+<div class="container content-sm">
+	<div class="headline-center margin-bottom-60">
+		<h1>Visi dan Misi</h1>
+		<h4>POKDARWIS GEGER HALANG</h4>
+		<p>Jl. Obyek Wisata Waduk Malahayu, Dukuh Balsiah RT. 13/ RW. 12 Desa Malahayu</p>
+		<p>Kecamatan Banjarharjo, Kabupaten Brebes, Provinsi Jawa Tengah 52265</p><hr>
+		</div>
+		<div class="row">
+			<div class="md-margin-bottom-50">
+				<p>{{ object_list.content|safe }}</p>
+			</div>
+		</div><!--/end row-->
+	</div>
+	<!--=== End Our Skills ===-->
+
+{% include 'snippet/footer.html' %}
+{% endblock content %}

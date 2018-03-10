@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+<!--=== List Wisata Posts ===-->
+		<div class="container content-md">
+			<!-- News v3 -->
+			{% for list in object_list %}
+			<div class="row margin-bottom-20">
+				<div class="col-sm-5 sm-margin-bottom-20">
+					<img class="img-responsive" src="{% if list.image %}{{ list.image.url }}{% else %}{% static 'img/img1.jpg' %}{% endif %}" alt="">
+				</div>
+				<div class="col-sm-7">
+					<div class="news-v3">
+						<ul class="list-inline posted-info">
+							<li>By Admin</li>
+							
+							<li>Posted {{ list.created }}</li>
+						</ul>
+						<h2><a href="{% url 'wisata:wisata-detail' list.slug %}">{{ list.name }}</a></h2>
+						<p>{{ list.content|safe }}</p>
+						<ul class="post-shares">
+							<li>
+								<a href="#">
+									<i class="rounded-x icon-speech"></i>
+									<span>5</span>
+								</a>
+							</li>
+							<li><a href="#"><i class="rounded-x icon-share"></i></a></li>
+							<li><a href="#"><i class="rounded-x icon-heart"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div><!--/end row-->
+			{% endfor %}
+			<!-- End News v3 -->
+
+			<div class="clearfix margin-bottom-20"><hr></div>
+
+			
+
+			<!-- Pager v3 
+			<ul class="pager pager-v3 pager-md no-margin-bottom">
+				<li class="previous"><a href="#">&larr; Older</a></li>
+				<li class="page-amount">1 of 7</li>
+				<li class="next"><a href="#">Newer &rarr;</a></li>
+			</ul>
+			 End Pager v3 -->
+		</div><!--/end container-->
+		<!--=== End Blog Posts ===-->
+
+{% include 'snippet/footer.html' %}
+
+{% endblock %}

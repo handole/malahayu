@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% block content %}
+
+<!-- Three Columns -->
+<div class="container content">
+	<div class="text-center margin-bottom-50">
+		<h2 class="title-v2 title-center">GALLERY FOTO PESONA WISATA MALAHAYU</h2>
+		<p class="space-lg-hor">If you are going to use a <span class="color-green">passage of Lorem Ipsum</span>, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making <span class="color-green">this the first</span> true generator on the Internet.</p>
+	</div>
+
+	<div class="row margin-bottom-30">
+		{% for list in object_list %}
+		<div class="col-sm-4 sm-margin-bottom-30" style="margin-bottom: 30px;">
+			<a href="{% if list.image %}{{ list.image.url }}{% else %}{% static 'img/img1.jpg' %}{% endif %}" rel="gallery1" class="fancybox img-hover-v1" title="{{ list.name }}">
+				<span><img class="img-responsive" src="{% if list.image %}{{ list.image.url }}{% else %}{% static 'img/img1.jpg' %}{% endif %}" alt="{{ list.name }}"></span>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+
+	<!-- <div class="row  margin-bottom-30">
+		<div class="col-sm-4 sm-margin-bottom-30">
+			<a href="{% static 'img/img1.jpg' %}" rel="gallery1" class="fancybox img-hover-v1" title="Image 1">
+				<span><img class="img-responsive" src="{% static 'img/img1.jpg' %}" alt=""></span>
+			</a>
+		</div>
+		<div class="col-sm-4 sm-margin-bottom-30">
+			<a href="{% static 'img/img1.jpg' %}" rel="gallery1" class="fancybox img-hover-v1" title="Image 2">
+				<span><img class="img-responsive" src="{% static 'img/img1.jpg' %}" alt=""></span>
+			</a>
+		</div>
+		<div class="col-sm-4">
+			<a href="{% static 'img/img1.jpg' %}" rel="gallery1" class="fancybox img-hover-v1" title="Image 3">
+				<span><img class="img-responsive" src="{% static 'img/img1.jpg' %}" alt=""></span>
+			</a>
+		</div>
+	</div>
+
+	<div class="row  margin-bottom-30">
+		<div class="col-sm-4 sm-margin-bottom-30">
+			<a href="{% static 'img/img1.jpg' %}" rel="gallery1" class="fancybox img-hover-v1" title="Image 1">
+				<span><img class="img-responsive" src="{% static 'img/img1.jpg' %}" alt=""></span>
+			</a>
+		</div>
+		<div class="col-sm-4 sm-margin-bottom-30">
+			<a href="{% static 'img/img1.jpg' %}" rel="gallery1" class="fancybox img-hover-v1" title="Image 2">
+				<span><img class="img-responsive" src="{% static 'img/img1.jpg' %}" alt=""></span>
+			</a>
+		</div>
+		<div class="col-sm-4">
+			<a href="{% static 'img/img1.jpg' %}" rel="gallery1" class="fancybox img-hover-v1" title="Image 3">
+				<span><img class="img-responsive" src="{% static 'img/img1.jpg' %}" alt=""></span>
+			</a>
+		</div>
+	</div> -->
+</div>
+<!-- End Three Columns -->
+
+{% include 'snippet/footer.html' %}
+{% endblock content %}
